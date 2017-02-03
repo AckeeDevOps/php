@@ -1,6 +1,15 @@
 # php
 PHP base images for running (not building!!) nette, symfony, silex php apps
 
+# Docker image:
+* `ackee/php`
+
+# Available tags:
+* `5.6-apache-silex`
+* `5.6-apache-symfony`
+* `5.6-apache-nette`
+* `7-apache-symfony`
+
 # Usage:
 *  `/var/app-storage/` is a persistent volume
 *  `/var/www/www/` is a new webspace root (via symlink)
