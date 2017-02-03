@@ -2,7 +2,9 @@
 PHP base images for running (not building!!) nette, symfony, silex php apps
 
 # Usage:
-
+*  `/var/app-storage/` is a persistent volume
+*  `/var/www/www/` is a new webspace root (via symlink)
+*  `/var/www/html/upload` is a symlink to persistent volume's dir upload
 ```
 FROM ackee/php:5.6-apache-silex
 COPY . /var/www/
