@@ -10,7 +10,7 @@ RUN apt-get update && \
     libbz2-dev \
     libxslt-dev \
     libldap2-dev \
-    php-pear \
+    php-pear  php5-cli php5-dev \
     curl \
     git \
     subversion \
@@ -26,14 +26,15 @@ RUN docker-php-ext-install bcmath mcrypt zip bz2 mbstring pcntl xsl \
   && docker-php-ext-configure ldap --with-libdir=lib/x86_64-linux-gnu/ \
   && docker-php-ext-install ldap \
   && docker-php-ext-install pdo
-  
+
 ENV MONGO_PHP_VERSION 1.5.5
 
-RUN pecl install mongo-$MONGO_PHP_VERSION && \
+RUN pecl install mongo && \
     mkdir -p /etc/php5/mods-available && \
     echo "extension=mongo.so" > /etc/php5/mods-available/mongo.ini && \
     ln -s /etc/php5/mods-available/mongo.ini /etc/php5/cli/conf.d/mongo.ini && \
     ln -s /etc/php5/mods-available/mcrypt.ini /etc/php5/cli/conf.d/mcrypt.ini
+#RUN pecl install mongo
 
 # setup apache
 RUN a2enmod ldap headers authnz_ldap && \
