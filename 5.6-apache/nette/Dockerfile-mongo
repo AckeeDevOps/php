@@ -33,7 +33,8 @@ RUN pecl install mongodb && \
     mkdir -p /etc/php5/mods-available && \
     echo "extension=mongodb.so" > /etc/php5/mods-available/mongo.ini && \
     ln -s /etc/php5/mods-available/mongo.ini /etc/php5/cli/conf.d/mongo.ini && \
-    ln -s /etc/php5/mods-available/mcrypt.ini /etc/php5/cli/conf.d/mcrypt.ini
+    ln -s /etc/php5/mods-available/mcrypt.ini /etc/php5/cli/conf.d/mcrypt.ini && \
+    echo "extension=php_mongodb.dll" >>/etc/php5/cli/php.ini
 
 # setup apache
 RUN a2enmod ldap headers authnz_ldap && \
