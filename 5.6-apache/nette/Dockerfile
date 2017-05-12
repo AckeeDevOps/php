@@ -16,6 +16,7 @@ RUN apt-get update && \
     subversion \
     unzip \
     wget \
+    libpcre3-dev \
   && rm -r /var/lib/apt/lists/* \
   && a2enmod rewrite
 
