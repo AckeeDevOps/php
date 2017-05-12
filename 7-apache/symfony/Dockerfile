@@ -25,6 +25,6 @@ RUN docker-php-ext-install bcmath mcrypt zip bz2 mbstring pcntl xsl \
   && docker-php-ext-install gd \
   && docker-php-ext-configure ldap --with-libdir=lib/x86_64-linux-gnu/ \
   && docker-php-ext-install ldap \
-  && docker-php-ext-install pdo pdo_mysql
+  && docker-php-ext-install pdo_mysql
 
 WORKDIR /var/www/
