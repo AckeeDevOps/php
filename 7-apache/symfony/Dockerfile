@@ -1,4 +1,4 @@
-FROM php:7-apache
+FROM php:7.1-apache
 
 # install composer dependencies
 RUN apt-get update && \
